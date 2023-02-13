@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora_elmo.MainPage">
+
+    <ScrollView>
+
+        
+
+        <StackLayout>
+
+           <VerticalStackLayout>
+
+                
+            </VerticalStackLayout>
+           
+
+            <Label
+                Text="Calcula sumas con elmo"
+                Padding="50"
+                FontSize="28"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                />
+
+            <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                <Label
+
+                    FontSize="25"
+                    x:Name="lbdorn_numero1"
+                        
+                    />
+
+                <Label
+                    FontSize="25"
+                    Text="+"
+                    />
+
+                <Label
+                    FontSize="25"
+                    x:Name="lbdorn_numero2"
+                    />
+
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Padding="30">
+
+                <Button
+                    x:Name="btndorn_generarNumero"
+                    HorizontalOptions="Center"
+                    Text="Jugar"
+                    Pressed="btndorn_generarNumero_Pressed"
+                    />
+
+
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+
+                <Entry
+                    VerticalOptions="CenterAndExpand"
+                    x:Name="txbdorn_suma"
+                    Keyboard="Numeric"
+                    
+                    />
+
+                <Button
+                    Text="Enviar"
+                    VerticalOptions="CenterAndExpand"
+                    Pressed="btndorn_enviar_Pressed"
+                    x:Name="btndorn_enviar"
+                    />
+
+            </HorizontalStackLayout>
+
+            <Label
+                HorizontalOptions="Center"
+                Padding="80"
+                x:Name="lbdorn_resultado"
+                FontSize="20"
+
+                />
+
+            <HorizontalStackLayout Spacing="50" HorizontalOptions="Center">
+
+                <Label
+                    Text="Aciertos: "
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    />
+
+                <Label
+                    Text="0"
+                    x:Name="lbdorn_aciertos"
+                    FontSize="20"
+                    />
+
+                <Label
+
+                    Text="Errores: "
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    />
+
+                <Label
+                    Text="0"
+                    x:Name="lbdorn_errores"
+                    FontSize="20"
+                    />
+
+            </HorizontalStackLayout>
+
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>
+
