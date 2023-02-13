@@ -7,7 +7,10 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+        
 	}
+
+    
 
     public static int suma = 0;
 
@@ -22,6 +25,8 @@ public partial class MainPage : ContentPage
 
         lbdorn_numero1.Text = num1.ToString();
         lbdorn_numero2.Text = num2.ToString();
+        
+        
     }
 
     void btndorn_generarNumero_Pressed(System.Object sender, System.EventArgs e)
@@ -38,9 +43,10 @@ public partial class MainPage : ContentPage
 
         btndorn_generarNumero.IsEnabled = false;
 
+        txbdorn_suma.Focus();
     }
 
-    public static int aciertos = 0, errores = 0;
+    int aciertos = 0, errores = 0;
 
     void btndorn_enviar_Pressed(System.Object sender, System.EventArgs e)
     {
@@ -74,6 +80,24 @@ public partial class MainPage : ContentPage
 
     }
 
+    void txbdorn_suma_Focused(System.Object sender, Microsoft.Maui.Controls.FocusEventArgs e)
+    {
+        txbdorn_suma.Focus();
+    }
+
+    async void btndorn_terminar_Pressed(System.Object sender, System.EventArgs e)
+    {
+        bool respuesta = await DisplayAlert("Reiniciar", "Seguro que desea reiniciar?", "Aceptar", "cancelar");
+
+        if (respuesta == true)
+        {
+            lbdorn_errores.Text = "0";
+            lbdorn_aciertos.Text = "0";
+            aciertos = 0;
+            errores = 0;
+        }
+
+    }
 }
 
 

@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="OrangeRed"
+             
              x:Class="Calculadora_elmo.MainPage">
 
     <ScrollView>
@@ -9,8 +12,13 @@
 
         <StackLayout>
 
-           <VerticalStackLayout>
+           <VerticalStackLayout Padding="20" >
 
+                <Image
+                    Source="elmo.png"
+                    WidthRequest="200"
+                    HeightRequest="200"
+                    />
                 
             </VerticalStackLayout>
            
@@ -47,9 +55,12 @@
             <VerticalStackLayout Padding="30">
 
                 <Button
+                    HeightRequest="40"
+                    WidthRequest="120"
                     x:Name="btndorn_generarNumero"
                     HorizontalOptions="Center"
                     Text="Jugar"
+                    FontSize="30"
                     Pressed="btndorn_generarNumero_Pressed"
                     />
 
@@ -59,17 +70,27 @@
             <HorizontalStackLayout HorizontalOptions="Center">
 
                 <Entry
-                    VerticalOptions="CenterAndExpand"
                     x:Name="txbdorn_suma"
                     Keyboard="Numeric"
-                    
+                    FontSize="30"
+                    VerticalOptions="FillAndExpand"
+                    HeightRequest="40"
+                    WidthRequest="150"
+                    Focused="txbdorn_suma_Focused" Placeholder="Numero"
+                                        
                     />
+
+
 
                 <Button
                     Text="Enviar"
                     VerticalOptions="CenterAndExpand"
                     Pressed="btndorn_enviar_Pressed"
                     x:Name="btndorn_enviar"
+                    FontSize="30"
+                   
+                    HeightRequest="40"
+                    WidthRequest="120"
                     />
 
             </HorizontalStackLayout>
@@ -107,6 +128,13 @@
                     Text="0"
                     x:Name="lbdorn_errores"
                     FontSize="20"
+                    />
+
+                <Button
+                    Text="Reinciar"
+                    x:Name="btndorn_terminar"
+                    FontSize="20"
+                    Pressed="btndorn_terminar_Pressed"
                     />
 
             </HorizontalStackLayout>
